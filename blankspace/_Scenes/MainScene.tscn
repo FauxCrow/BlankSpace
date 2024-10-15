@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpa4d8mi4ibft"]
+
+[ext_resource type="Script" path="res://_Scripts/menu.gd" id="1_1s140"]
+[ext_resource type="Shader" path="res://_Scripts/Shaders/scroll.gdshader" id="1_coxom"]
+[ext_resource type="Texture2D" uid="uid://cy7sel3qoshlw" path="res://_Sprites/temp/testBG.jpg" id="2_18qxe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l4vpt"]
+shader = ExtResource("1_coxom")
+shader_parameter/speed = 0.1
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_1s140")
+
+[node name="ScrollBg" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_l4vpt")
+position = Vector2(960, 540)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_18qxe")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 898.0
+offset_top = 522.0
+offset_right = 991.0
+offset_bottom = 545.0
+text = "Blank Space"
+
+[node name="StartBtn" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 923.0
+offset_top = 622.0
+offset_right = 969.0
+offset_bottom = 653.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="QuitBtn" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 923.0
+offset_top = 664.0
+offset_right = 969.0
+offset_bottom = 695.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]

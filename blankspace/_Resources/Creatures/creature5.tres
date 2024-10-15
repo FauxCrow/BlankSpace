@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://n6mqqw0ttgk5"]
+
+[ext_resource type="Script" path="res://_Scripts/Resource/creature.gd" id="1_xjwei"]
+
+[resource]
+script = ExtResource("1_xjwei")
+planetCode = ""
+name = ""
+planetName = ""
+habitat = ""

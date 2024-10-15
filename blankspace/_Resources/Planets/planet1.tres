@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dnrdt5rowi3s4"]
+
+[ext_resource type="Script" path="res://_Scripts/Resource/planet.gd" id="1_vavec"]
+
+[resource]
+script = ExtResource("1_vavec")
+planetCode = ""
+name = ""
+description = ""

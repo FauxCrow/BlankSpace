@@ -1,0 +1,22 @@
+[gd_scene load_steps=14 format=3 uid="uid://juomfu0twuee"]
+
+[ext_resource type="Script" path="res://_Scripts/gameInfo.gd" id="1_la2vi"]
+[ext_resource type="Resource" uid="uid://dnrdt5rowi3s4" path="res://_Resources/Planets/planet1.tres" id="2_67n3c"]
+[ext_resource type="Resource" uid="uid://b1hxcij3rq0ng" path="res://_Resources/Planets/planet2.tres" id="3_u8yo4"]
+[ext_resource type="Resource" uid="uid://d4mkoiah3f5m5" path="res://_Resources/Planets/planet3.tres" id="4_6vn1d"]
+[ext_resource type="Resource" uid="uid://bw2sxl567n1at" path="res://_Resources/Planets/planet4.tres" id="5_p0lxe"]
+[ext_resource type="Resource" uid="uid://cw3adnfrc7ed3" path="res://_Resources/Planets/planet5.tres" id="6_diifr"]
+[ext_resource type="Resource" uid="uid://di7gexlwwxkll" path="res://_Resources/Creatures/creature1.tres" id="7_iv5so"]
+[ext_resource type="Resource" uid="uid://mwcap6imnth3" path="res://_Resources/Creatures/creature2.tres" id="8_2yruc"]
+[ext_resource type="Resource" uid="uid://cib27n83who6v" path="res://_Resources/Creatures/creature3.tres" id="9_chgsv"]
+[ext_resource type="Resource" uid="uid://bq3fkr2cmr5mt" path="res://_Resources/Creatures/creature4.tres" id="10_wdb4j"]
+[ext_resource type="Resource" uid="uid://n6mqqw0ttgk5" path="res://_Resources/Creatures/creature5.tres" id="11_0esn6"]
+[ext_resource type="Resource" uid="uid://dii1cmjd5200q" path="res://_Resources/Shapes/shape1.tres" id="12_f72oo"]
+[ext_resource type="Resource" uid="uid://cdmcsophhjeao" path="res://_Resources/_JournalEntry/entry1.tres" id="13_njyt6"]
+
+[node name="GameInfo" type="Node"]
+script = ExtResource("1_la2vi")
+planets = Array[Resource]([ExtResource("2_67n3c"), ExtResource("3_u8yo4"), ExtResource("4_6vn1d"), ExtResource("5_p0lxe"), ExtResource("6_diifr")])
+creatures = Array[Resource]([ExtResource("7_iv5so"), ExtResource("8_2yruc"), ExtResource("9_chgsv"), ExtResource("10_wdb4j"), ExtResource("11_0esn6")])
+shapes = Array[Resource]([ExtResource("12_f72oo")])
+entries = Array[Resource]([ExtResource("13_njyt6")])
