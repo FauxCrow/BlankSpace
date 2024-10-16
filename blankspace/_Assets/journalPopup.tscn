@@ -1,8 +1,68 @@
-[gd_scene load_steps=2 format=3 uid="uid://burthnowkrhl"]
+[gd_scene load_steps=3 format=3 uid="uid://c45jvhilccx5"]
 
-[ext_resource type="Script" path="res://_Scripts/journal.gd" id="1_pfrc6"]
+[ext_resource type="Texture2D" uid="uid://lygex17wfmko" path="res://_UI/Sprites/jounalPopup.PNG" id="1_dt0h7"]
+[ext_resource type="Script" path="res://_Scripts/Ship/planetSelection.gd" id="1_myo2o"]
 
-[node name="JournalBG" type="TextureRect"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_pfrc6")
+[node name="JournalOverlay" type="ColorRect" node_paths=PackedStringArray("input")]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.254902)
+script = ExtResource("1_myo2o")
+input = NodePath("")
+
+[node name="JournalBg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1134.0
+offset_top = -567.0
+offset_right = 1134.0
+offset_bottom = 567.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dt0h7")
+
+[node name="creaturePageLayout" type="Control" parent="JournalBg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="planetPageLayout" type="Control" parent="JournalBg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="shapePageLayout" type="Control" parent="JournalBg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2

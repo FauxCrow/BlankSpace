@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmbhpufifi518"]
+[gd_scene load_steps=7 format=3 uid="uid://bmbhpufifi518"]
 
-[ext_resource type="Shader" path="res://_Scripts/Shaders/scroll.gdshader" id="1_a2xbc"]
+[ext_resource type="Shader" path="res://_Scripts/_Shaders/scroll.gdshader" id="1_a2xbc"]
+[ext_resource type="Script" path="res://_Scripts/Ship/controls.gd" id="1_iyyp0"]
 [ext_resource type="Texture2D" uid="uid://cy7sel3qoshlw" path="res://_Sprites/temp/testBG.jpg" id="2_t00re"]
-[ext_resource type="PackedScene" uid="uid://burthnowkrhl" path="res://_Assets/journalPopup.tscn" id="3_7cagm"]
+[ext_resource type="Texture2D" uid="uid://cgcy6l5g7imop" path="res://_UI/Sprites/journalUI.png" id="4_0m1ya"]
+[ext_resource type="PackedScene" uid="uid://u20wr8681o2d" path="res://_Assets/controlPanelPopup.tscn" id="4_e1tba"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_co1ko"]
 shader = ExtResource("1_a2xbc")
 shader_parameter/speed = 0.1
 
-[node name="ShipScene" type="Node2D"]
+[node name="ShipScene" type="Node2D" node_paths=PackedStringArray("controlPanel")]
+script = ExtResource("1_iyyp0")
+controlPanel = NodePath("UICanvas/ControlPanelOverlay")
 
 [node name="ScrollBg" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -38,12 +42,20 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="JournalBtn" type="Button" parent="UICanvas"]
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="JournalBG" parent="UICanvas/JournalBtn" instance=ExtResource("3_7cagm")]
-layout_mode = 0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -264.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("4_0m1ya")
 
 [node name="Instructions" type="TextureRect" parent="UICanvas"]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ControlPanelOverlay" parent="UICanvas" instance=ExtResource("4_e1tba")]
+visible = false
