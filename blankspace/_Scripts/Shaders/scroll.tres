@@ -4,3 +4,4 @@
 
 [resource]
 shader = ExtResource("1_nltep")
+shader_parameter/speed = 0.025

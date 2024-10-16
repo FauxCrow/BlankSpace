@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmbhpufifi518"]
+[gd_scene load_steps=5 format=3 uid="uid://bmbhpufifi518"]
 
 [ext_resource type="Shader" path="res://_Scripts/Shaders/scroll.gdshader" id="1_a2xbc"]
 [ext_resource type="Texture2D" uid="uid://cy7sel3qoshlw" path="res://_Sprites/temp/testBG.jpg" id="2_t00re"]
+[ext_resource type="PackedScene" uid="uid://burthnowkrhl" path="res://_Assets/journalPopup.tscn" id="3_7cagm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_co1ko"]
 shader = ExtResource("1_a2xbc")
@@ -39,6 +40,9 @@ offset_bottom = 40.0
 [node name="JournalBtn" type="Button" parent="UICanvas"]
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="JournalBG" parent="UICanvas/JournalBtn" instance=ExtResource("3_7cagm")]
+layout_mode = 0
 
 [node name="Instructions" type="TextureRect" parent="UICanvas"]
 offset_right = 40.0
