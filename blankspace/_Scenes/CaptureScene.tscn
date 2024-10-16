@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://kq43b50s4dnl"]
 
 [node name="CaptureScene" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="Creature" type="Sprite2D" parent="."]
+
+[node name="Foreground" type="Sprite2D" parent="."]
+
+[node name="Overlay" type="Sprite2D" parent="."]
