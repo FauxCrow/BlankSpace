@@ -1,9 +1,9 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://dnrdt5rowi3s4"]
 
-[ext_resource type="Script" path="res://_Scripts/Resource/planet.gd" id="1_vavec"]
+[ext_resource type="Script" path="res://_Scripts/_Resource/planet.gd" id="1_8cm31"]
 
 [resource]
-script = ExtResource("1_vavec")
-planetCode = "test_code"
+script = ExtResource("1_8cm31")
+planetCode = "code1"
 name = "test_name"
 description = "test_description"

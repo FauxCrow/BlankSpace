@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpa4d8mi4ibft"]
 
-[ext_resource type="Script" path="res://_Scripts/menu.gd" id="1_1s140"]
-[ext_resource type="Shader" path="res://_Scripts/Shaders/scroll.gdshader" id="1_coxom"]
+[ext_resource type="Script" path="res://_Scripts/MainMenu/menu.gd" id="1_1s140"]
+[ext_resource type="Shader" path="res://_Scripts/_Shaders/scroll.gdshader" id="1_coxom"]
 [ext_resource type="Texture2D" uid="uid://cy7sel3qoshlw" path="res://_Sprites/temp/testBG.jpg" id="2_18qxe"]
 [ext_resource type="FontFile" uid="uid://kq8bydm0ljqk" path="res://_UI/Fonts/KILLERBOOTS.TTF" id="4_bx56q"]
 [ext_resource type="FontFile" uid="uid://k3e5vjnjlq67" path="res://_UI/Fonts/Magnite.otf" id="5_bc0an"]

@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://qru58fmj0j23"]
+[gd_scene load_steps=5 format=3 uid="uid://qru58fmj0j23"]
 
 [ext_resource type="FontFile" uid="uid://k3e5vjnjlq67" path="res://_UI/Fonts/Magnite.otf" id="1_yjx4n"]
+[ext_resource type="Script" path="res://_Scripts/timer.gd" id="2_t8sw0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ya837"]
 font = ExtResource("1_yjx4n")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_rv5qq"]
+font = ExtResource("1_yjx4n")
+font_size = 50
 
 [node name="RadarScene" type="Node2D"]
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 120.0
-one_shot = true
-autostart = true
 
 [node name="ControlPanel" type="Sprite2D" parent="."]
 
@@ -22,10 +23,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -155.5
-offset_top = -76.5
-offset_right = 155.5
-offset_bottom = 76.5
+offset_left = -835.0
+offset_top = 266.0
+offset_right = -207.0
+offset_bottom = 419.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Press arrow keys to move ship's tracker.
@@ -35,3 +36,25 @@ red = ______
 blue = ______
 yellow = _______"
 label_settings = SubResource("LabelSettings_ya837")
+
+[node name="TimerText" type="Label" parent="UICanvas" node_paths=PackedStringArray("timer")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -284.0
+offset_top = 80.0
+offset_right = -93.0
+offset_bottom = 129.0
+grow_horizontal = 0
+text = "3:00"
+label_settings = SubResource("LabelSettings_rv5qq")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_t8sw0")
+timer = NodePath("CountdownTimer")
+currentTime = 180
+
+[node name="CountdownTimer" type="Timer" parent="UICanvas/TimerText"]
+autostart = true
+
+[connection signal="timeout" from="UICanvas/TimerText/CountdownTimer" to="UICanvas/TimerText" method="_on_countdown_timer_timeout"]
