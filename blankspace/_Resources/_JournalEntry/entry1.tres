@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_eaugl")
 planetCode = ""
-name = ""
+name = "TEST"
 planetName = ""
 habitat = ""
 diet = ""
