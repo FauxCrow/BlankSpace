@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_eaugl")
-planetCode = ""
-name = "TEST"
-planetName = ""
-habitat = ""
-diet = ""
-happiness = 0
+planetCode = "???"
+name = "???"
+planetName = "???"
+habitat = "???"
+diet = "???"
+happiness = false

@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://u20wr8681o2d"]
+
+[ext_resource type="Script" path="res://_Scripts/planetSelection.gd" id="1_12gke"]
+
+[node name="ControlPanelOverlay" type="ColorRect" node_paths=PackedStringArray("input")]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.254902)
+script = ExtResource("1_12gke")
+input = NodePath("ControlPanel/PlanetCodeInput")
+
+[node name="ControlPanel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlanetCodeInput" type="LineEdit" parent="ControlPanel"]
+layout_mode = 0
+offset_top = -215.0
+offset_right = 67.0625
+offset_bottom = -184.0
+placeholder_text = "yip"
+alignment = 1
+max_length = 5
+virtual_keyboard_enabled = false
+
+[node name="EnterBtn" type="Button" parent="ControlPanel"]
+layout_mode = 0
+offset_left = -470.0
+offset_top = -154.0
+offset_right = -462.0
+offset_bottom = -146.0
+scale = Vector2(-45.9639, -35.3896)
+
+[connection signal="pressed" from="ControlPanel/EnterBtn" to="." method="_on_enter_btn_pressed"]

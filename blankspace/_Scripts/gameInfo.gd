@@ -16,3 +16,6 @@ extends Node
 # store player data
 @export var energy: int = 100
 @export var happiness: int = 100
+
+# store input data
+@export var chosenPlanetPosition: int

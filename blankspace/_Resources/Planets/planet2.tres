@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_0eer7")
-planetCode = ""
-name = ""
-description = ""
+planetCode = "test_code"
+name = "test_name"
+description = "test_description"

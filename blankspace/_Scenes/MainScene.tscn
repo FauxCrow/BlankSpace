@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpa4d8mi4ibft"]
+[gd_scene load_steps=8 format=3 uid="uid://cpa4d8mi4ibft"]
 
 [ext_resource type="Script" path="res://_Scripts/menu.gd" id="1_1s140"]
 [ext_resource type="Shader" path="res://_Scripts/Shaders/scroll.gdshader" id="1_coxom"]
 [ext_resource type="Texture2D" uid="uid://cy7sel3qoshlw" path="res://_Sprites/temp/testBG.jpg" id="2_18qxe"]
+[ext_resource type="FontFile" uid="uid://kq8bydm0ljqk" path="res://_UI/Fonts/KILLERBOOTS.TTF" id="4_bx56q"]
+[ext_resource type="FontFile" uid="uid://k3e5vjnjlq67" path="res://_UI/Fonts/Magnite.otf" id="5_bc0an"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l4vpt"]
 shader = ExtResource("1_coxom")
 shader_parameter/speed = 0.1
+
+[sub_resource type="LabelSettings" id="LabelSettings_k3jly"]
+font = ExtResource("4_bx56q")
+font_size = 100
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_1s140")
@@ -18,42 +24,58 @@ position = Vector2(960, 540)
 scale = Vector2(2.3, 2.3)
 texture = ExtResource("2_18qxe")
 
-[node name="Title" type="Label" parent="."]
-offset_left = 898.0
-offset_top = 522.0
-offset_right = 991.0
-offset_bottom = 545.0
-text = "Blank Space"
+[node name="UICanvas" type="CanvasLayer" parent="ScrollBg"]
 
-[node name="StartBtn" type="Button" parent="."]
+[node name="Title" type="Label" parent="ScrollBg/UICanvas"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 923.0
-offset_top = 622.0
-offset_right = 969.0
-offset_bottom = 653.0
+offset_left = -348.0
+offset_top = -209.0
+offset_right = 349.0
+offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "Blank Space"
+label_settings = SubResource("LabelSettings_k3jly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartBtn" type="Button" parent="ScrollBg/UICanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0001
+offset_top = 19.9999
+offset_right = 8.99994
+offset_bottom = 50.9999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_bc0an")
+theme_override_font_sizes/font_size = 40
 text = "Start"
 
-[node name="QuitBtn" type="Button" parent="."]
+[node name="QuitBtn" type="Button" parent="ScrollBg/UICanvas"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 923.0
-offset_top = 664.0
-offset_right = 969.0
-offset_bottom = 695.0
+offset_left = -37.0001
+offset_top = 124.0
+offset_right = 8.99994
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_bc0an")
+theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
 
-[connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]
-[connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="ScrollBg/UICanvas/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="ScrollBg/UICanvas/QuitBtn" to="." method="_on_quit_btn_pressed"]

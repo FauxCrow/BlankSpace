@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_y4e6x")
-description = ""
+description = "test_description"
