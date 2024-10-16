@@ -3,7 +3,7 @@
 shader_type canvas_item;
 
 // Uniforms
-uniform float speed = 0.05;
+uniform float speed = 0.025;
 
 // Functions
 void fragment () {
