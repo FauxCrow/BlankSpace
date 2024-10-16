@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://burthnowkrhl"]
+[gd_scene load_steps=2 format=3 uid="uid://burthnowkrhl"]
+
+[ext_resource type="Script" path="res://_Scripts/journal.gd" id="1_pfrc6"]
 
 [node name="JournalBG" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_pfrc6")
