@@ -59,6 +59,7 @@ offset_right = 150.0
 offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_djioj")
 placeholder_text = "_ _ _ _ _"
 alignment = 1
 max_length = 5

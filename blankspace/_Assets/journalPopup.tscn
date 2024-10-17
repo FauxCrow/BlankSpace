@@ -1,9 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c45jvhilccx5"]
+[gd_scene load_steps=10 format=3 uid="uid://c45jvhilccx5"]
 
 [ext_resource type="Texture2D" uid="uid://lygex17wfmko" path="res://_UI/Sprites/jounalPopup.PNG" id="1_dt0h7"]
-[ext_resource type="Script" path="res://_Scripts/S2/planetSelection.gd" id="1_myo2o"]
+[ext_resource type="Script" path="res://_Scripts/journal.gd" id="1_nv82w"]
 [ext_resource type="Texture2D" uid="uid://btccw77vfjj3g" path="res://_Sprites/Planets/Planet_aron.png" id="3_nve8m"]
 [ext_resource type="FontFile" uid="uid://k3e5vjnjlq67" path="res://_UI/Fonts/Magnite.otf" id="4_u1vv5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h7g0i"]
+font = ExtResource("4_u1vv5")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_q6hkb"]
 font = ExtResource("4_u1vv5")
@@ -18,12 +23,22 @@ outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h326v"]
+font = ExtResource("4_u1vv5")
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdp17"]
+font = ExtResource("4_u1vv5")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
 
 [node name="JournalOverlay" type="ColorRect"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.254902)
-script = ExtResource("1_myo2o")
+script = ExtResource("1_nv82w")
 
 [node name="JournalBg" type="TextureRect" parent="."]
 layout_mode = 1
@@ -55,7 +70,133 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="creature1" type="TextureRect" parent="JournalBg/creaturePageLayout"]
+offset_left = -153.0
+offset_top = -275.0
+offset_right = -25.0
+offset_bottom = -147.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/creaturePageLayout/creature1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_h7g0i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="creature2" type="TextureRect" parent="JournalBg/creaturePageLayout"]
+offset_left = 47.0
+offset_top = -275.0
+offset_right = 175.0
+offset_bottom = -147.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/creaturePageLayout/creature2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_h7g0i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="creature3" type="TextureRect" parent="JournalBg/creaturePageLayout"]
+offset_left = -153.0
+offset_top = -85.0
+offset_right = -25.0
+offset_bottom = 43.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/creaturePageLayout/creature3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_h7g0i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="creature5" type="TextureRect" parent="JournalBg/creaturePageLayout"]
+offset_left = -153.0
+offset_top = 107.0
+offset_right = -25.0
+offset_bottom = 235.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/creaturePageLayout/creature5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_h7g0i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="creature4" type="TextureRect" parent="JournalBg/creaturePageLayout"]
+offset_left = 47.0
+offset_top = -85.0
+offset_right = 175.0
+offset_bottom = 43.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/creaturePageLayout/creature4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_h7g0i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="planetPageLayout" type="Control" parent="JournalBg"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,11 +220,11 @@ texture = ExtResource("3_nve8m")
 
 [node name="planetCode" type="Label" parent="JournalBg/planetPageLayout"]
 layout_mode = 0
-offset_left = 25.0
+offset_left = 13.0
 offset_top = -250.0
-offset_right = 220.0
+offset_right = 208.0
 offset_bottom = -201.0
-text = "sc124"
+text = "code"
 label_settings = SubResource("LabelSettings_q6hkb")
 
 [node name="planetName" type="Label" parent="JournalBg/planetPageLayout"]
@@ -92,14 +233,16 @@ offset_left = 25.0
 offset_top = -175.0
 offset_right = 220.0
 offset_bottom = -126.0
-text = "whbhyduhjwd"
+text = "Planet Name"
 label_settings = SubResource("LabelSettings_p8hf5")
 
 [node name="planetDescription" type="Label" parent="JournalBg/planetPageLayout"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "dhwjdwddvwjhdbhwkbdvkhwbd"
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 250.0
+text = "This is a description"
 label_settings = SubResource("LabelSettings_h326v")
 
 [node name="shapePageLayout" type="Control" parent="JournalBg"]
@@ -116,3 +259,228 @@ offset_right = 306.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="shape1" type="TextureRect" parent="JournalBg/shapePageLayout"]
+offset_left = -197.0
+offset_top = -254.0
+offset_right = -97.0
+offset_bottom = -154.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/shapePageLayout/shape1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_hdp17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shape2" type="TextureRect" parent="JournalBg/shapePageLayout"]
+offset_left = -31.0
+offset_top = -254.0
+offset_right = 69.0
+offset_bottom = -154.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/shapePageLayout/shape2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_hdp17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shape3" type="TextureRect" parent="JournalBg/shapePageLayout"]
+offset_left = 129.0
+offset_top = -254.0
+offset_right = 229.0
+offset_bottom = -154.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/shapePageLayout/shape3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_hdp17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shape4" type="TextureRect" parent="JournalBg/shapePageLayout"]
+offset_left = -197.0
+offset_top = -70.0
+offset_right = -97.0
+offset_bottom = 30.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/shapePageLayout/shape4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_hdp17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shape5" type="TextureRect" parent="JournalBg/shapePageLayout"]
+offset_left = -31.0
+offset_top = -70.0
+offset_right = 69.0
+offset_bottom = 30.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/shapePageLayout/shape5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_hdp17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shape6" type="TextureRect" parent="JournalBg/shapePageLayout"]
+offset_left = 129.0
+offset_top = -70.0
+offset_right = 229.0
+offset_bottom = 30.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/shapePageLayout/shape6"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_hdp17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shape7" type="TextureRect" parent="JournalBg/shapePageLayout"]
+offset_left = -197.0
+offset_top = 114.0
+offset_right = -97.0
+offset_bottom = 214.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/shapePageLayout/shape7"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_hdp17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shape8" type="TextureRect" parent="JournalBg/shapePageLayout"]
+offset_left = -31.0
+offset_top = 114.0
+offset_right = 69.0
+offset_bottom = 214.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/shapePageLayout/shape8"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_hdp17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shape9" type="TextureRect" parent="JournalBg/shapePageLayout"]
+offset_left = 129.0
+offset_top = 114.0
+offset_right = 229.0
+offset_bottom = 214.0
+texture = ExtResource("3_nve8m")
+
+[node name="Label" type="Label" parent="JournalBg/shapePageLayout/shape9"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stinky"
+label_settings = SubResource("LabelSettings_hdp17")
+horizontal_alignment = 1
+vertical_alignment = 1
