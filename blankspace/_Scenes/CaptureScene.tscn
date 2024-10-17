@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://kq43b50s4dnl"]
+[gd_scene load_steps=2 format=3 uid="uid://kq43b50s4dnl"]
 
-[ext_resource type="Script" path="res://_Scripts/Capture/CreatureOverlay.gd" id="1_2cmck"]
-[ext_resource type="Texture2D" uid="uid://tb0krk7tfb25" path="res://_Sprites/Planets/planet_1.png" id="1_d130k"]
-[ext_resource type="Texture2D" uid="uid://0ev68pyrj0b3" path="res://_Sprites/Planets/planet_2.png" id="2_x6ny2"]
+[ext_resource type="Script" path="res://_Scripts/S4/CreatureOverlay.gd" id="1_2cmck"]
 
 [node name="CaptureScene" type="Node2D" node_paths=PackedStringArray("creature", "overlayImage", "countdownTimer")]
 script = ExtResource("1_2cmck")
@@ -13,13 +11,11 @@ countdownTimer = NodePath("CooldownTimer")
 [node name="Background" type="Sprite2D" parent="."]
 
 [node name="Creature" type="Sprite2D" parent="."]
-texture = ExtResource("1_d130k")
 
 [node name="Foreground" type="Sprite2D" parent="."]
 
 [node name="Overlay" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_x6ny2")
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 5.0
