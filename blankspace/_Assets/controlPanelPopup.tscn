@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://u20wr8681o2d"]
+[gd_scene load_steps=4 format=3 uid="uid://cptt8nm4qxgf1"]
 
 [ext_resource type="Script" path="res://_Scripts/S2/planetSelection.gd" id="1_12gke"]
 [ext_resource type="FontFile" uid="uid://k3e5vjnjlq67" path="res://_UI/Fonts/Magnite.otf" id="2_djioj"]
