@@ -1,20 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmbhpufifi518"]
-
+[gd_scene load_steps=15 format=3 uid="uid://bmbhpufifi518"]
 
 [ext_resource type="Script" path="res://_Scripts/S2/controls.gd" id="1_iyyp0"]
 [ext_resource type="Material" uid="uid://brtp70u5o70v4" path="res://_Scripts/_Shaders/scroll.tres" id="2_q0l5f"]
 [ext_resource type="Texture2D" uid="uid://yjm6i4uhp4mv" path="res://_Sprites/_S2/S2_Background.png" id="2_ycugr"]
 [ext_resource type="Texture2D" uid="uid://bolww7dso6755" path="res://_Sprites/_S2/S2_Foreground.png" id="3_qthm6"]
-[ext_resource type="Texture2D" uid="uid://cgcy6l5g7imop" path="res://_UI/Sprites/journalUI.png" id="4_0m1ya"]
 [ext_resource type="PackedScene" uid="uid://cptt8nm4qxgf1" path="res://_Assets/controlPanelPopup.tscn" id="4_e1tba"]
 [ext_resource type="Texture2D" uid="uid://du6xafr2yypin" path="res://_UI/Sprites/bar_outline.png" id="5_iyh5t"]
 [ext_resource type="Texture2D" uid="uid://bjqgiint8aevl" path="res://_UI/Sprites/energyUI.png" id="5_ttdc7"]
 [ext_resource type="Texture2D" uid="uid://bbv5eashks28o" path="res://_UI/Sprites/energy_fill.png" id="6_1w10x"]
 [ext_resource type="Texture2D" uid="uid://dhp4kc8v1mmx8" path="res://_UI/Sprites/bar_fill.png" id="6_p6gsc"]
 [ext_resource type="Texture2D" uid="uid://brly7o4cemtly" path="res://_UI/Sprites/happyIcon1.png" id="7_vctm7"]
-[ext_resource type="Texture2D" uid="uid://cuuv1kii6qwut" path="res://_UI/Sprites/noticeIcon.png" id="8_ji2h3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wd5t4"]
+[ext_resource type="Material" uid="uid://4dshme3rqna1" path="res://_Scripts/_Shaders/flash.tres" id="10_nl7a6"]
+[ext_resource type="Texture2D" uid="uid://cqscegjh8lbya" path="res://_UI/Sprites/TextOverlay.png" id="10_x1gkf"]
+[ext_resource type="PackedScene" uid="uid://nuc5hrcfrye1" path="res://_Assets/journal.tscn" id="13_a858f"]
+[ext_resource type="AudioStream" uid="uid://b634dgukbia51" path="res://_Audio/newbie-arriving-edm-music-230646.mp3" id="14_smdo5"]
 
 [node name="ShipScene" type="Node2D" node_paths=PackedStringArray("controlPanel", "energyBar", "happinessBar", "happinessIcon")]
 script = ExtResource("1_iyyp0")
@@ -82,40 +81,26 @@ offset_bottom = 111.8
 scale = Vector2(-0.5, -0.5)
 texture = ExtResource("7_vctm7")
 
-[node name="JournalBtn" type="Button" parent="UICanvas"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -264.0
-offset_top = -264.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_wd5t4")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wd5t4")
-icon = ExtResource("4_0m1ya")
-
-[node name="TextureRect" type="TextureRect" parent="UICanvas/JournalBtn"]
-layout_mode = 0
-offset_left = 150.0
-offset_top = 25.0
-offset_right = 214.0
-offset_bottom = 89.0
-texture = ExtResource("8_ji2h3")
-
 [node name="Instructions" type="TextureRect" parent="UICanvas"]
-offset_right = 40.0
-offset_bottom = 40.0
+material = ExtResource("10_nl7a6")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -444.0
+offset_top = -31.0
+offset_right = 444.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_x1gkf")
 
 [node name="ControlPanelOverlay" parent="UICanvas" instance=ExtResource("4_e1tba")]
 visible = false
+
+[node name="journalCanvas" parent="." instance=ExtResource("13_a858f")]
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="journalCanvas"]
+stream = ExtResource("14_smdo5")
+autoplay = true

@@ -1,5 +1,7 @@
 # this script will take information from gameInfo (autoload) and create pages for the journal
-extends Node
+extends CanvasLayer
+
+@export var journal : ColorRect
 
 # stores all journal data
 @export var creaturePages : int = ceil(len(GameInfo.entries) / 6.0)
@@ -64,9 +66,12 @@ func loadPage() -> void:
 # print(GameInfo.entries[0].name); #works
 
 func loadCreaturePage() -> void:
+	currentPage.visible = true
 	pass
 	
 func loadPlanetPage() -> void:
+	currentPage.visible = true
+	
 	var planetNo: int = currentPageNo - creaturePages + 1
 	var image := planetPageLayout.get_node_or_null("planetImg") as TextureRect
 	var code := planetPageLayout.get_node_or_null("planetCode") as Label
@@ -79,4 +84,23 @@ func loadPlanetPage() -> void:
 	description = GameInfo.planets[planetNo].description
 	
 func loadShapePage() -> void:
+	currentPage.visible = true
 	pass
+
+
+func _on_journal_btn_pressed() -> void:
+	journal.visible = true
+	GameInfo.newEntry = false
+
+
+func _on_button_pressed() -> void:
+	journal.visible = false
+	pass # Replace with function body.
+
+
+func _on_right_btn_pressed() -> void:
+	swapPage(true) 
+
+
+func _on_left_btn_pressed() -> void:
+	swapPage(false) 

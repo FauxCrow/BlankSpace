@@ -14,8 +14,7 @@ var x_value: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	noise = noise_height_texture.noise
-	# x_value = GameInfo.chosenPlanetPosition
-	x_value = 0
+	x_value = GameInfo.chosenPlanetPosition
 	generate_world()
 
 
@@ -36,3 +35,12 @@ func generate_world() -> void:
 			elif noise_val < 0:
 				tilemap.set_cell(Vector2i(x,y), source, Vector2i(x_value, 2))
 				pass
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://_Scenes/CaptureScene.tscn")
+
+
+func _on_area_2d_mouse_entered() -> void:
+	get_tree().change_scene_to_file("res://_Scenes/CaptureScene.tscn")
+	pass # Replace with function body.

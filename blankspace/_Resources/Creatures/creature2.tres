@@ -1,11 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://mwcap6imnth3"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://mwcap6imnth3"]
 
 [ext_resource type="Script" path="res://_Scripts/_Resource/creature.gd" id="1_p856m"]
+[ext_resource type="Texture2D" uid="uid://6g3tidk1udoq" path="res://_Sprites/Creatures/b&w/The Peddler black.PNG" id="1_sx3ts"]
+[ext_resource type="Texture2D" uid="uid://iucgtimnvckx" path="res://_Sprites/Creatures/photo_2024-10-17_18-40-24.jpg" id="2_yygxe"]
 
 [resource]
 script = ExtResource("1_p856m")
-planetCode = "test_code"
-name = "test_name"
-planetName = "test_planetName"
-habitat = "test_habitat"
-diet = "test_diet"
+image = ExtResource("2_yygxe")
+habitatImage = ExtResource("1_sx3ts")
+planetCode = "MIMOS"
+name = "  "
+planetName = "Pebbla"
+habitat = "Swamp"
+diet = "Parasites"

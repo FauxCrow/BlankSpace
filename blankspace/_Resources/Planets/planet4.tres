@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bw2sxl567n1at"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bw2sxl567n1at"]
 
 [ext_resource type="Script" path="res://_Scripts/_Resource/planet.gd" id="1_3j3fo"]
+[ext_resource type="Texture2D" uid="uid://ojdsqipwil34" path="res://_Sprites/Planets/Planet_DeepOcean.png" id="1_kwwxh"]
 
 [resource]
 script = ExtResource("1_3j3fo")
-planetCode = "code4"
-name = "test_name"
-description = "test_description"
+image = ExtResource("1_kwwxh")
+planetCode = "ABYSS"
+name = "The Abyss"
+description = "A planet with deep dark oceans and filled with glowing plants and animals. This habitat can only be in waters and exposure to sunlight will cause it to become smaller."

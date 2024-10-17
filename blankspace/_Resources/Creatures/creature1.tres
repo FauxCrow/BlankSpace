@@ -1,11 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://di7gexlwwxkll"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://di7gexlwwxkll"]
 
+[ext_resource type="Texture2D" uid="uid://eot7pi2kpyd6" path="res://_Sprites/Creatures/b&w/Stinky black.PNG" id="1_thrpn"]
 [ext_resource type="Script" path="res://_Scripts/_Resource/creature.gd" id="1_yl84n"]
+[ext_resource type="Texture2D" uid="uid://b38gl348g4u74" path="res://_Sprites/Creatures/photo_2024-10-17_18-40-22.jpg" id="2_haasr"]
 
 [resource]
 script = ExtResource("1_yl84n")
-planetCode = "test_code"
-name = "test_name"
-planetName = "test_planetName"
-habitat = "test_habitat"
-diet = "test_diet"
+image = ExtResource("2_haasr")
+habitatImage = ExtResource("1_thrpn")
+planetCode = "STINK"
+name = "__"
+planetName = "StinkyTown"
+habitat = "Drylands"
+diet = "Small Bugs"

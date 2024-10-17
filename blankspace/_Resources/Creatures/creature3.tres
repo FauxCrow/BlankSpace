@@ -1,11 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cib27n83who6v"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cib27n83who6v"]
 
 [ext_resource type="Script" path="res://_Scripts/_Resource/creature.gd" id="1_7m620"]
+[ext_resource type="Texture2D" uid="uid://bo57nihqj7qkm" path="res://_Sprites/Creatures/b&w/Aaron no A black.jpg" id="1_c2gtd"]
+[ext_resource type="Texture2D" uid="uid://b45hds7pj40ob" path="res://_Sprites/Creatures/photo_2024-10-17_18-40-29.jpg" id="2_ugnuw"]
 
 [resource]
 script = ExtResource("1_7m620")
-planetCode = "test_code"
+image = ExtResource("2_ugnuw")
+habitatImage = ExtResource("1_c2gtd")
+planetCode = "AAAAA"
 name = "test_name"
-planetName = "test_planetName"
-habitat = "test_habitat"
-diet = "test_diet"
+planetName = "AARON"
+habitat = "Water Reserves"
+diet = "Nothing"

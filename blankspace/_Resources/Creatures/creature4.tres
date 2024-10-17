@@ -1,11 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bq3fkr2cmr5mt"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bq3fkr2cmr5mt"]
 
 [ext_resource type="Script" path="res://_Scripts/_Resource/creature.gd" id="1_0w1pl"]
+[ext_resource type="Texture2D" uid="uid://ewxwf6seoo7l" path="res://_Sprites/Creatures/b&w/shrimp black.PNG" id="1_cjgxh"]
+[ext_resource type="Texture2D" uid="uid://cf4po65qv1qbe" path="res://_Sprites/Creatures/photo_2024-10-17_18-40-26.jpg" id="2_8ic5f"]
 
 [resource]
 script = ExtResource("1_0w1pl")
-planetCode = "test_code"
-name = "test_name"
-planetName = "test_planetName"
-habitat = "test_habitat"
-diet = "test_diet"
+image = ExtResource("2_8ic5f")
+habitatImage = ExtResource("1_cjgxh")
+planetCode = "ABYSS"
+name = ""
+planetName = "The Abyss"
+habitat = "Deep Ocean"
+diet = "Jellyfish"

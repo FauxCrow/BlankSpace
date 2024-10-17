@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d4mkoiah3f5m5"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d4mkoiah3f5m5"]
 
 [ext_resource type="Script" path="res://_Scripts/_Resource/planet.gd" id="1_4cjw8"]
+[ext_resource type="Texture2D" uid="uid://btccw77vfjj3g" path="res://_Sprites/Planets/Planet_aron.png" id="1_gw7qp"]
 
 [resource]
 script = ExtResource("1_4cjw8")
-planetCode = "code3"
-name = "test_name"
-description = "test_description"
+image = ExtResource("1_gw7qp")
+planetCode = "AAAAA"
+name = "AARON"
+description = "planet is called pyros, and it rains and floods very frequently due to its small size and gigantic planets around it."

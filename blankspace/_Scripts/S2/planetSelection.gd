@@ -25,4 +25,5 @@ func _on_enter_btn_pressed() -> void:
 		GameInfo.chosenPlanetPosition = randi_range(0,4)
 	
 	# change scene to radar scene
+	GameInfo.useEnergy
 	get_tree().change_scene_to_file("res://_Scenes/RadarScene.tscn")

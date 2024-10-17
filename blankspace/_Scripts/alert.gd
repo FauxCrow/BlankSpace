@@ -1,6 +1,4 @@
-extends Node
-
-@export var alertIcon: TextureRect
+extends TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +10,6 @@ func _process(delta: float) -> void:
 
 func toggleIcon() -> void:
 	if GameInfo.newEntry == true:
-		alertIcon.visible = true
+		visible = true
 	else:
-		alertIcon.visible = false
+		visible = false

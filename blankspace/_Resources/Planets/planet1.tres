@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dnrdt5rowi3s4"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dnrdt5rowi3s4"]
 
 [ext_resource type="Script" path="res://_Scripts/_Resource/planet.gd" id="1_8cm31"]
+[ext_resource type="Texture2D" uid="uid://bkc014sbnf06w" path="res://_Sprites/Planets/Planet_Stinky.png" id="1_48k1l"]
 
 [resource]
 script = ExtResource("1_8cm31")
-planetCode = "code1"
-name = "test_name"
-description = "test_description"
+image = ExtResource("1_48k1l")
+planetCode = "STINK"
+name = "StinkyTown"
+description = "A dry planet without any water sources that is relatively flat and have multiple cave systems. It has one moon."
