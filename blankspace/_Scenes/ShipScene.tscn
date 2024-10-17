@@ -1,4 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmbhpufifi518"]
+[gd_scene load_steps=11 format=3 uid="uid://bmbhpufifi518"]
+
 
 [ext_resource type="Script" path="res://_Scripts/S2/controls.gd" id="1_iyyp0"]
 [ext_resource type="Material" uid="uid://brtp70u5o70v4" path="res://_Scripts/_Shaders/scroll.tres" id="2_q0l5f"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bbv5eashks28o" path="res://_UI/Sprites/energy_fill.png" id="6_1w10x"]
 [ext_resource type="Texture2D" uid="uid://dhp4kc8v1mmx8" path="res://_UI/Sprites/bar_fill.png" id="6_p6gsc"]
 [ext_resource type="Texture2D" uid="uid://brly7o4cemtly" path="res://_UI/Sprites/happyIcon1.png" id="7_vctm7"]
+[ext_resource type="Texture2D" uid="uid://cuuv1kii6qwut" path="res://_UI/Sprites/noticeIcon.png" id="8_ji2h3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wd5t4"]
 
@@ -102,6 +104,14 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_wd5t4")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_wd5t4")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wd5t4")
 icon = ExtResource("4_0m1ya")
+
+[node name="TextureRect" type="TextureRect" parent="UICanvas/JournalBtn"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 25.0
+offset_right = 214.0
+offset_bottom = 89.0
+texture = ExtResource("8_ji2h3")
 
 [node name="Instructions" type="TextureRect" parent="UICanvas"]
 offset_right = 40.0
