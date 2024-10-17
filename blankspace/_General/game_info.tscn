@@ -14,12 +14,14 @@
 [ext_resource type="Resource" uid="uid://dii1cmjd5200q" path="res://_Resources/Shapes/shape1.tres" id="12_f72oo"]
 [ext_resource type="Resource" uid="uid://cdmcsophhjeao" path="res://_Resources/_JournalEntry/entry1.tres" id="13_njyt6"]
 
-[node name="GameInfo" type="Node"]
+[node name="GameInfo" type="Node" node_paths=PackedStringArray("happinessTimer", "rechargeTimer")]
 script = ExtResource("1_la2vi")
 planets = Array[Resource]([ExtResource("2_67n3c"), ExtResource("3_u8yo4"), ExtResource("4_6vn1d"), ExtResource("5_p0lxe"), ExtResource("6_diifr")])
 creatures = Array[Resource]([ExtResource("7_iv5so"), ExtResource("8_2yruc"), ExtResource("9_chgsv"), ExtResource("10_wdb4j"), ExtResource("11_0esn6")])
 shapes = Array[Resource]([ExtResource("12_f72oo")])
 entries = Array[Resource]([ExtResource("13_njyt6")])
+happinessTimer = NodePath("HappinessTimer")
+rechargeTimer = NodePath("RechargeTImer")
 
 [node name="HappinessTimer" type="Timer" parent="."]
 wait_time = 5.0

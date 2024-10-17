@@ -1,20 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmbhpufifi518"]
+[gd_scene load_steps=10 format=3 uid="uid://bmbhpufifi518"]
 
 [ext_resource type="Script" path="res://_Scripts/S2/controls.gd" id="1_iyyp0"]
 [ext_resource type="Material" uid="uid://brtp70u5o70v4" path="res://_Scripts/_Shaders/scroll.tres" id="2_q0l5f"]
 [ext_resource type="Texture2D" uid="uid://yjm6i4uhp4mv" path="res://_Sprites/_S2/S2_Background.png" id="2_ycugr"]
 [ext_resource type="Texture2D" uid="uid://bolww7dso6755" path="res://_Sprites/_S2/S2_Foreground.png" id="3_qthm6"]
 [ext_resource type="Texture2D" uid="uid://cgcy6l5g7imop" path="res://_UI/Sprites/journalUI.png" id="4_0m1ya"]
-[ext_resource type="PackedScene" uid="uid://u20wr8681o2d" path="res://_Assets/controlPanelPopup.tscn" id="4_e1tba"]
+[ext_resource type="PackedScene" uid="uid://cptt8nm4qxgf1" path="res://_Assets/controlPanelPopup.tscn" id="4_e1tba"]
 [ext_resource type="Texture2D" uid="uid://bjqgiint8aevl" path="res://_UI/Sprites/energyUI.png" id="5_ttdc7"]
+[ext_resource type="Texture2D" uid="uid://brly7o4cemtly" path="res://_UI/Sprites/happyIcon1.png" id="7_vctm7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wd5t4"]
 
-[node name="ShipScene" type="Node2D" node_paths=PackedStringArray("controlPanel", "energyBar", "happinessBar")]
+[node name="ShipScene" type="Node2D" node_paths=PackedStringArray("controlPanel", "energyBar", "happinessBar", "happinessIcon")]
 script = ExtResource("1_iyyp0")
 controlPanel = NodePath("UICanvas/ControlPanelOverlay")
 energyBar = NodePath("UICanvas/BarManager/EnergyBar")
 happinessBar = NodePath("UICanvas/BarManager/HappinessBar")
+happinessIcon = NodePath("UICanvas/BarManager/HappinessBar/HappinessIco")
 
 [node name="ScrollBg" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -53,6 +55,14 @@ texture = ExtResource("5_ttdc7")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="HappinessIco" type="TextureRect" parent="UICanvas/BarManager/HappinessBar"]
+layout_mode = 0
+offset_left = 1750.0
+offset_top = 38.0
+offset_right = 1878.0
+offset_bottom = 166.0
+texture = ExtResource("7_vctm7")
 
 [node name="JournalBtn" type="Button" parent="UICanvas"]
 anchors_preset = 3
