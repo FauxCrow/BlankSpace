@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c45jvhilccx5"]
+[gd_scene load_steps=8 format=3 uid="uid://c45jvhilccx5"]
 
 [ext_resource type="Texture2D" uid="uid://lygex17wfmko" path="res://_UI/Sprites/jounalPopup.PNG" id="1_dt0h7"]
 [ext_resource type="Script" path="res://_Scripts/S2/planetSelection.gd" id="1_myo2o"]
@@ -16,6 +16,8 @@ font_size = 20
 font_color = Color(0, 0, 0, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h326v"]
 
 [node name="JournalOverlay" type="ColorRect"]
 offset_right = 1920.0
@@ -92,6 +94,13 @@ offset_right = 220.0
 offset_bottom = -126.0
 text = "whbhyduhjwd"
 label_settings = SubResource("LabelSettings_p8hf5")
+
+[node name="planetDescription" type="Label" parent="JournalBg/planetPageLayout"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "dhwjdwddvwjhdbhwkbdvkhwbd"
+label_settings = SubResource("LabelSettings_h326v")
 
 [node name="shapePageLayout" type="Control" parent="JournalBg"]
 visible = false
