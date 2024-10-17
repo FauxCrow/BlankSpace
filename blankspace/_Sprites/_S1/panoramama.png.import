@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tb0krk7tfb25"
-path="res://.godot/imported/planet_1.png-997d009f04fe1101c4beebb60aa06efb.ctex"
+uid="uid://c6ml8u3dgt6ya"
+path="res://.godot/imported/panoramama.png-136c0f4b70f3c66b2499dcfe2d3892f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Sprites/Planets/planet_1.png"
-dest_files=["res://.godot/imported/planet_1.png-997d009f04fe1101c4beebb60aa06efb.ctex"]
+source_file="res://_Sprites/_S1/panoramama.png"
+dest_files=["res://.godot/imported/panoramama.png-136c0f4b70f3c66b2499dcfe2d3892f7.ctex"]
 
 [params]
 
