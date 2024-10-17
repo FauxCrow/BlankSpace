@@ -1,23 +1,125 @@
-[gd_scene load_steps=2 format=3 uid="uid://kq43b50s4dnl"]
+[gd_scene load_steps=10 format=3 uid="uid://kq43b50s4dnl"]
 
 [ext_resource type="Script" path="res://_Scripts/S4/CreatureOverlay.gd" id="1_2cmck"]
+[ext_resource type="Texture2D" uid="uid://bley44rgpgl5p" path="res://_Sprites/_S3,4/S3S4_Background.png" id="2_glnsw"]
+[ext_resource type="Texture2D" uid="uid://0co37pxrvefr" path="res://_Sprites/_S3,4/S4_BackgroundOverlay.png" id="3_no74e"]
+[ext_resource type="Texture2D" uid="uid://bk57cony5g5ud" path="res://_Sprites/_S3,4/S4_Foreground.png" id="4_2ojrv"]
+[ext_resource type="FontFile" uid="uid://k3e5vjnjlq67" path="res://_UI/Fonts/Magnite.otf" id="5_h7qda"]
+[ext_resource type="Script" path="res://_Scripts/timer.gd" id="6_o56n2"]
+[ext_resource type="Texture2D" uid="uid://xpb05iintxt7" path="res://_UI/Sprites/GameOver.png" id="7_h8tqg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4e3ip"]
+font = ExtResource("5_h7qda")
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_eqbex"]
+line_spacing = 10.0
+font = ExtResource("5_h7qda")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
 
 [node name="CaptureScene" type="Node2D" node_paths=PackedStringArray("creature", "overlayImage", "countdownTimer")]
 script = ExtResource("1_2cmck")
 creature = NodePath("Creature")
 overlayImage = NodePath("Overlay")
-countdownTimer = NodePath("CooldownTimer")
+countdownTimer = NodePath("Overlay/CooldownTimer")
 
 [node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("2_glnsw")
+
+[node name="Containment" type="Sprite2D" parent="Background"]
+position = Vector2(101.6, 0)
+texture = ExtResource("3_no74e")
 
 [node name="Creature" type="Sprite2D" parent="."]
 
 [node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(1328, 540)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("4_2ojrv")
 
 [node name="Overlay" type="Sprite2D" parent="."]
 visible = false
 
-[node name="CooldownTimer" type="Timer" parent="."]
+[node name="CooldownTimer" type="Timer" parent="Overlay"]
 wait_time = 5.0
 
-[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerText" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("timer", "gameOver")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1765.0
+offset_top = 150.0
+offset_right = -1329.0
+offset_bottom = 294.0
+grow_horizontal = 0
+text = "5:00"
+label_settings = SubResource("LabelSettings_4e3ip")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_o56n2")
+timer = NodePath("CountdownTimer")
+currentTime = 300
+gameOver = NodePath("../captureOver")
+
+[node name="CountdownTimer" type="Timer" parent="CanvasLayer/TimerText"]
+autostart = true
+
+[node name="captureOver" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_h8tqg")
+
+[node name="Label" type="Label" parent="CanvasLayer/captureOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.5
+offset_top = -117.0
+offset_right = 289.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Time's up!
+Click to return"
+label_settings = SubResource("LabelSettings_eqbex")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/captureOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 44.0
+offset_right = 252.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_h7qda")
+theme_override_font_sizes/font_size = 50
+text = "Oh no!"
+
+[connection signal="timeout" from="Overlay/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/TimerText/CountdownTimer" to="CanvasLayer/TimerText" method="_on_countdown_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/captureOver/Button" to="CanvasLayer/TimerText" method="_on_button_pressed"]

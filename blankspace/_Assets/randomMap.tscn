@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmqrgpm5nrtvf"]
+
+[ext_resource type="Script" path="res://_Scripts/S3/mapGenerator.gd" id="1_8vhfy"]
+[ext_resource type="TileSet" uid="uid://bvhlhw0yrlyc3" path="res://_Sprites/mapTilets.tres" id="2_aukpd"]
+
+[sub_resource type="Gradient" id="Gradient_xmfnt"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6lpjm"]
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pqdy8"]
+width = 100
+height = 100
+color_ramp = SubResource("Gradient_xmfnt")
+noise = SubResource("FastNoiseLite_6lpjm")
+
+[node name="RandomMap" type="Node2D" node_paths=PackedStringArray("tilemap")]
+script = ExtResource("1_8vhfy")
+noise_height_texture = SubResource("NoiseTexture2D_pqdy8")
+tilemap = NodePath("TileMapLayer")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_aukpd")
