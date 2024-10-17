@@ -1,10 +1,11 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://cib27n83who6v"]
 
-[ext_resource type="Script" path="res://_Scripts/Resource/creature.gd" id="1_7m620"]
+[ext_resource type="Script" path="res://_Scripts/_Resource/creature.gd" id="1_7m620"]
 
 [resource]
 script = ExtResource("1_7m620")
-planetCode = ""
-name = ""
-planetName = ""
-habitat = ""
+planetCode = "test_code"
+name = "test_name"
+planetName = "test_planetName"
+habitat = "test_habitat"
+diet = "test_diet"
