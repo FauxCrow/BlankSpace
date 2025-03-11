@@ -1,11 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://n6mqqw0ttgk5"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://n6mqqw0ttgk5"]
 
+[ext_resource type="Texture2D" uid="uid://ctoj1a143yt2j" path="res://_Sprites/Creatures/b&w/Boing^2 Black.PNG" id="1_tr4l8"]
 [ext_resource type="Script" path="res://_Scripts/_Resource/creature.gd" id="1_xjwei"]
+[ext_resource type="Texture2D" uid="uid://ylektfc61eqm" path="res://_Sprites/Creatures/photo_2024-10-17_18-40-19.jpg" id="2_xci6a"]
 
 [resource]
 script = ExtResource("1_xjwei")
-planetCode = "test_code"
+image = ExtResource("2_xci6a")
+habitatImage = ExtResource("1_tr4l8")
+planetCode = "STR81"
 name = "test_name"
-planetName = "test_planetName"
-habitat = "test_habitat"
-diet = "test_diet"
+planetName = "Stringent Rules"
+habitat = "Lush"
+diet = "Surroundings"

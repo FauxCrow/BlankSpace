@@ -27,12 +27,20 @@ extends Node
 
 # stores journal updates
 @export var newEntry: bool = true
+@export var currentEntryPos: int = 0
 		
 func addhappiness(value: int) -> void:
 	happiness = happiness + value
 	
 	if (happiness > 100):
 		happiness = 100
+		
+		
+func removehappiness(value: int) -> void:
+	happiness = happiness - value
+	
+	if (happiness <= 0):
+		emit_signal("gameOver")
 		
 
 func useEnergy(value: int) -> void:

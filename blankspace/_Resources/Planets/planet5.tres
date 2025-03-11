@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cw3adnfrc7ed3"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cw3adnfrc7ed3"]
 
 [ext_resource type="Script" path="res://_Scripts/_Resource/planet.gd" id="1_fu6s7"]
+[ext_resource type="Texture2D" uid="uid://b7jeosvnqje23" path="res://_Sprites/Planets/Planet_BoingBoing.png" id="1_gr0g6"]
 
 [resource]
 script = ExtResource("1_fu6s7")
-planetCode = "code5"
-name = "test_name"
-description = "test_description"
+image = ExtResource("1_gr0g6")
+planetCode = "STR81"
+name = "Stringent Rules"
+description = "A lush, cloudy and bouncy region that’s wrapped around with multiple strings."

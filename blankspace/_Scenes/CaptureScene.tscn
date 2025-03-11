@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kq43b50s4dnl"]
+[gd_scene load_steps=13 format=3 uid="uid://kq43b50s4dnl"]
 
 [ext_resource type="Script" path="res://_Scripts/S4/CreatureOverlay.gd" id="1_2cmck"]
 [ext_resource type="Texture2D" uid="uid://bley44rgpgl5p" path="res://_Sprites/_S3,4/S3S4_Background.png" id="2_glnsw"]
@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://k3e5vjnjlq67" path="res://_UI/Fonts/Magnite.otf" id="5_h7qda"]
 [ext_resource type="Script" path="res://_Scripts/timer.gd" id="6_o56n2"]
 [ext_resource type="Texture2D" uid="uid://xpb05iintxt7" path="res://_UI/Sprites/GameOver.png" id="7_h8tqg"]
+[ext_resource type="PackedScene" uid="uid://nuc5hrcfrye1" path="res://_Assets/journal.tscn" id="8_jikmg"]
+[ext_resource type="AudioStream" uid="uid://d4havgq75whv8" path="res://_Audio/sci-fi-ambient-music-183269.mp3" id="9_0alyb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4e3ip"]
 font = ExtResource("5_h7qda")
@@ -18,11 +20,21 @@ font = ExtResource("5_h7qda")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
-[node name="CaptureScene" type="Node2D" node_paths=PackedStringArray("creature", "overlayImage", "countdownTimer")]
+[sub_resource type="LabelSettings" id="LabelSettings_ip8ph"]
+font = ExtResource("5_h7qda")
+font_size = 30
+
+[node name="CaptureScene" type="Node2D" node_paths=PackedStringArray("creature", "overlayImage", "countdownTimer", "nameinput", "planetinput", "habitatinput", "dietinput", "Win", "gameOver")]
 script = ExtResource("1_2cmck")
 creature = NodePath("Creature")
 overlayImage = NodePath("Overlay")
 countdownTimer = NodePath("Overlay/CooldownTimer")
+nameinput = NodePath("CanvasLayer/Inputs/name/TextEdit")
+planetinput = NodePath("CanvasLayer/Inputs/planet/TextEdit")
+habitatinput = NodePath("CanvasLayer/Inputs/habitat/TextEdit")
+dietinput = NodePath("CanvasLayer/Inputs/diet/TextEdit")
+Win = NodePath("CanvasLayer/win")
+gameOver = NodePath("CanvasLayer/gameOver")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -34,14 +46,18 @@ position = Vector2(101.6, 0)
 texture = ExtResource("3_no74e")
 
 [node name="Creature" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1324, 566)
 
 [node name="Foreground" type="Sprite2D" parent="."]
+z_index = 5
 position = Vector2(1328, 540)
 scale = Vector2(3.75, 3.75)
 texture = ExtResource("4_2ojrv")
 
 [node name="Overlay" type="Sprite2D" parent="."]
 visible = false
+z_index = 2
 
 [node name="CooldownTimer" type="Timer" parent="Overlay"]
 wait_time = 5.0
@@ -57,7 +73,7 @@ offset_top = 150.0
 offset_right = -1329.0
 offset_bottom = 294.0
 grow_horizontal = 0
-text = "5:00"
+text = "0:00"
 label_settings = SubResource("LabelSettings_4e3ip")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -120,6 +136,235 @@ theme_override_fonts/font = ExtResource("5_h7qda")
 theme_override_font_sizes/font_size = 50
 text = "Oh no!"
 
+[node name="win" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_h8tqg")
+
+[node name="Label" type="Label" parent="CanvasLayer/win"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.5
+offset_top = -117.0
+offset_right = 289.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You got it!
+Click to return"
+label_settings = SubResource("LabelSettings_eqbex")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="winBtn" type="Button" parent="CanvasLayer/win"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 44.0
+offset_right = 252.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_h7qda")
+theme_override_font_sizes/font_size = 50
+text = "Yay!"
+
+[node name="gameOver" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_h8tqg")
+
+[node name="Label" type="Label" parent="CanvasLayer/gameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.5
+offset_top = -117.0
+offset_right = 289.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "That was wrong...
+Click to return"
+label_settings = SubResource("LabelSettings_eqbex")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gameOverBtn" type="Button" parent="CanvasLayer/gameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 44.0
+offset_right = 252.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_h7qda")
+theme_override_font_sizes/font_size = 50
+text = "Yay!"
+
+[node name="Inputs" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 386.0
+offset_top = 445.0
+offset_right = 426.0
+offset_bottom = 485.0
+
+[node name="name" type="Label" parent="CanvasLayer/Inputs"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = -11.0
+offset_right = -11.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Name:"
+label_settings = SubResource("LabelSettings_ip8ph")
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Inputs/name"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 407.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("5_h7qda")
+
+[node name="planet" type="Label" parent="CanvasLayer/Inputs"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = 106.0
+offset_right = -11.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Planet:"
+label_settings = SubResource("LabelSettings_ip8ph")
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Inputs/planet"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 407.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("5_h7qda")
+
+[node name="habitat" type="Label" parent="CanvasLayer/Inputs"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = 227.0
+offset_right = -11.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Habitat:"
+label_settings = SubResource("LabelSettings_ip8ph")
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Inputs/habitat"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 407.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("5_h7qda")
+
+[node name="diet" type="Label" parent="CanvasLayer/Inputs"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = 347.0
+offset_right = -11.0
+offset_bottom = 377.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Diet:"
+label_settings = SubResource("LabelSettings_ip8ph")
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Inputs/diet"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 407.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("5_h7qda")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 261.0
+offset_top = 932.0
+offset_right = 486.0
+offset_bottom = 989.0
+theme_override_fonts/font = ExtResource("5_h7qda")
+theme_override_font_sizes/font_size = 50
+text = "Check "
+
+[node name="CanvasLayer" parent="CanvasLayer" instance=ExtResource("8_jikmg")]
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_0alyb")
+autoplay = true
+
+[connection signal="stop" from="." to="CanvasLayer/TimerText" method="_on_capture_scene_stop"]
 [connection signal="timeout" from="Overlay/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/TimerText/CountdownTimer" to="CanvasLayer/TimerText" method="_on_countdown_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/captureOver/Button" to="CanvasLayer/TimerText" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/win/winBtn" to="." method="_on_win_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/gameOver/gameOverBtn" to="." method="_on_game_over_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

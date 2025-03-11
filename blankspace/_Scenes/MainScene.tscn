@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpa4d8mi4ibft"]
+[gd_scene load_steps=10 format=3 uid="uid://cpa4d8mi4ibft"]
 
 [ext_resource type="Script" path="res://_Scripts/S1/menu.gd" id="1_1s140"]
 [ext_resource type="Material" uid="uid://brtp70u5o70v4" path="res://_Scripts/_Shaders/scroll.tres" id="2_sbk60"]
 [ext_resource type="Texture2D" uid="uid://c6ml8u3dgt6ya" path="res://_Sprites/_S1/panoramama.png" id="3_rlx3e"]
 [ext_resource type="FontFile" uid="uid://kq8bydm0ljqk" path="res://_UI/Fonts/KILLERBOOTS.TTF" id="4_bx56q"]
 [ext_resource type="FontFile" uid="uid://k3e5vjnjlq67" path="res://_UI/Fonts/Magnite.otf" id="5_bc0an"]
+[ext_resource type="AudioStream" uid="uid://eabvrf7e33n0" path="res://_Audio/perfect-beauty-191271.mp3" id="6_b1o1f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k3jly"]
 font = ExtResource("4_bx56q")
@@ -110,6 +111,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0b2g5")
 text = "quit"
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_b1o1f")
+autoplay = true
 
 [connection signal="pressed" from="ScrollBg/UICanvas/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="ScrollBg/UICanvas/QuitBtn" to="." method="_on_quit_btn_pressed"]

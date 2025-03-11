@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b1hxcij3rq0ng"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b1hxcij3rq0ng"]
 
+[ext_resource type="Texture2D" uid="uid://1vojhaoybufg" path="res://_Sprites/Planets/Planet_Peddler.png" id="1_j6cto"]
 [ext_resource type="Script" path="res://_Scripts/_Resource/planet.gd" id="1_wvddk"]
 
 [resource]
 script = ExtResource("1_wvddk")
-planetCode = "code2"
-name = "test_name"
-description = "test_description"
+image = ExtResource("1_j6cto")
+planetCode = "MIMOS"
+name = "Pebbla"
+description = "An overgrown lush planet that is always raining lightly. It is surrounded by a slightly thick green mist and has two small moons. "
